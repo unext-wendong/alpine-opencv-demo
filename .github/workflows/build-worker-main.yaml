@@ -1,0 +1,17 @@
+name    : 'Build'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build worker main base image
+        uses: docker/build-push-action@v5
+        with:
+          push: false
+          tags: opencv-tester:0.1.0
