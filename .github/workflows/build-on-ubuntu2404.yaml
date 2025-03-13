@@ -1,16 +1,16 @@
-name    : 'Build'
+name: 'Build on ubuntu-24.04'
 
 on:
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Build worker main base image
+      - name: Build
         uses: docker/build-push-action@v5
         with:
           push: false

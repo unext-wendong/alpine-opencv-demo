@@ -1,0 +1,17 @@
+name: 'Build on ubuntu-22.04'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build
+        uses: docker/build-push-action@v5
+        with:
+          push: false
+          tags: opencv-tester:0.1.0
